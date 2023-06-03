@@ -9,3 +9,4 @@ Clone do Twitter feito em NodeJS
 1. [ ] - LOGIN
     1.    [X] - Middleware de login.
     1.    [X] - Rota de Login
+    1.    [X] - Página de login
