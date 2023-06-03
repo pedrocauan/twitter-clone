@@ -14,6 +14,10 @@ const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 app.set("view engine", "pug"),
 app.set("views", "views")
 
+// Routes
+const loginRoute = require("./routes/loginRoutes")
+app.use("/login", loginRoute)
+
 //rotas
 app.get("/", middleware.requireLogin, (req, res, next) => {
     const payload = {
