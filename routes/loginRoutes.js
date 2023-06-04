@@ -10,7 +10,6 @@ app.set("views", "views")
 
 //rotas
 router.get("/", (req, res, next) => {
-
     res.status(200).render("login");
 })
 
