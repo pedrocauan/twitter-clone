@@ -1,6 +1,7 @@
 //imports
 const express = require("express");
 const axios = require("axios")
+const path = require("path")
 const app = express();
 
 //middlewares
@@ -12,12 +13,13 @@ const port = 3003;
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 
 //Configurações
-app.set("view engine", "pug"),
-app.set("views", "views")
+app.set("view engine", "pug");
+app.set("views", "views");
+app.use(express.static("public"));
 
 // Routes
-const loginRoute = require("./routes/loginRoutes")
-app.use("/login", loginRoute)
+const loginRoute = require("./routes/loginRoutes");
+app.use("/login", loginRoute);
 
 //rotas
 app.get("/", middleware.requireLogin, (req, res, next) => {
